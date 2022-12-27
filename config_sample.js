@@ -4,7 +4,7 @@ let config = {
     port: 8080,
     assetsPath: '论坛/public/assets/',
     cache: '/tmp/',
-    origUrl: 'legacy站网址',
+    origUrl: '论坛网址',
     postsPerPage: 10,
     mysql: {
         host: '127.0.0.1',

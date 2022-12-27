@@ -29,6 +29,7 @@ let postHandler = (req, res) => {
                 expires: new Date(Date.now() + 2678400000)
             });
             server.res.redirect(301, '/');
+            utils.log('Success！');
         }
         else {
             server.res.render('login', {msg: '错误的用户名或密码'});

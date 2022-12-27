@@ -53,7 +53,9 @@ let handler = (req, res) => {
                     .replace(/<C>\$\$([^]+?)\$\$<\/C>/g, (match, expr) => `<img src="/KaTeX/${encodeURIComponent(expr)}"></img>`)
                     .replace(/<HR>([^]+?)<\/HR>/g, () => '<hr />')
                     .replace(/@(.+?)#\d+/, (match, p1) => `<font size="3" color="#337000">${config.lang.replyTo}${p1}:</font> `)
-                    .replace(/<USERMENTION ([^]+?)>([^]+?)<\/USERMENTION>/, (match, p1, p2) => `<a href="/u/${ p1.match(/username="(.+?)"/)[1] }" class="mention">${ p2 }</a>`),
+                    .replace(/<USERMENTION ([^]+?)>([^]+?)<\/USERMENTION>/, (match, p1, p2) => `<a href="/u/${ p1.match(/username="(.+?)"/)[1] }" class="mention">${ p2 }</a>`)
+                    .replace('{"sticky":true}', (match, p1) => '置顶了此贴')
+                    .replace('{"sticky":false}', (match, p1) => '取消置顶了此贴'),
                 avatarPath: '/assets/avatars/' + (row.avatar_url || 'default.jpg')
             };
 
