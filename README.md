@@ -4,6 +4,8 @@ Legacy version of Flarum with support of IE4.0+
 
 Based on https://github.com/cnVintage/cnVintage-Legacy from @cnVintage, with some change to make it run with Flarum RTM.
 
+On progress.
+
 # Licenses
 
 
