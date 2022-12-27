@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+a img {
+    border: 0;
+}
+
+a {
+    word-wrap: break-word;
+}
+
+form {
+    margin: 0;
+}
+
+h1 {
+    font-size: 160%;
+}
+
+h2 {
+    font-size: 120%;
+}
+
+h3 {
+    font-size: 100%;
+}
+
+.preview {
+    padding: 10px;
+    background: #e4f2d9;
+}
+
+.mark {
+    background: #ffff00;
+}
+
+.tagList {
+    margin-right: 10px
+}
+
+a:link, a:hover, a:visited, a:active {
+    display: inline;
+    cursor: hand;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.pageButton {
+    width: 20px;
+    height:20px;
+    display: inline-block;
+    line-height: 20px;
+    text-align: center;
+    color: #337000;
+    border: 1px solid #89a970;
+}
+
+.activeButton {
+    width: 20px;
+    height:20px;
+    display: inline-block;
+    line-height: 20px;
+    text-align: center;
+    color: white;
+    border: 1px solid #89a970;
+    background: #337000;
+}
+
+.disableButton {
+    width: 20px;
+    height:20px;
+    display: inline-block;
+    line-height: 20px;
+    text-align: center;
+    border: 1px solid #89a970;
+    color: #dddddd;
+}
+
+.mention {
+    background: #ecf6e4;
+    color: #7d9966 !important;
+}
+
+body {
+    max-width: 1024px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+}
+
+html {
+    background-color: #F0F0F0;
+}
