@@ -1,6 +1,6 @@
 # fla_legacy
 
-Legacy version of Flarum with support of IE4.0+
+Legacy version of Flarum with support of IE4.0+, Firefox 2.0+ (lower/other browser not tested, may not work)
 
 Based on https://github.com/cnVintage/cnVintage-Legacy from @cnVintage, with some change to make it run with Flarum RTM.
 
