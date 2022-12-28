@@ -11,17 +11,18 @@ let middleware = (req, res, next) => {
         return;
     }
     else {
+
         let conn = db.getConn();
 
         // Get more info about the access_token
         conn.query({
             sql: [
-                'SELECT access_tokens.id, access_tokens.user_id, access_tokens.last_activity_at,',
+                'SELECT access_tokens.token, access_tokens.user_id, access_tokens.last_activity_at,',
                 '       users.username, users.avatar_url', //access_tokens.lifetime
                 'FROM   access_tokens ',
-                'INNER JOIN users ',
-                '        ON users.id = user_id ',
-                'WHERE access_tokens.id'
+                'INNER JOIN users',
+                'ON users.id = user_id ',
+                `WHERE access_tokens.token = '${req.cookies.access_token}'`
             ].join(' '),
             values: [req.cookies.access_token]
         }, (err, table) => {
@@ -31,6 +32,7 @@ let middleware = (req, res, next) => {
                 return;
             }
             if (table.length !== 1) {
+                utils.log('Fuck!!!!!!!!!!');
                 req.logined = false;
                 next();
                 return;

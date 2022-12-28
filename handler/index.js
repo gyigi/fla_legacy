@@ -100,9 +100,11 @@ let handler = (req, res) => {
                         },
                         lastDate: utils.formatDate(item['last_posted_at']),
                         replyCnt: item['comment_count'] - 1,
-                        href: `/d/${item['id']}-${item['slug']}`,
+                        
+                            href: `/d/${item['id']}-${item['slug']}`,
+
                         isSticky: item['is_sticky'],
-                        // tagList: `[${tagMap[item['id']].join('|')}]`
+                        //tagList: `[${tagMap[item['id']].join('|')}]`
                     };
                 });
 

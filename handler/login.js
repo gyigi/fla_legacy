@@ -23,7 +23,6 @@ let postHandler = (req, res) => {
             password: req.body.password
         }
     }, (err, res, body) => {
-        utils.log(`res: ${body.token}`);
         if (typeof body.errors === 'undefined') {
             server.res.cookie('access_token', body.token, {
                 path: '/',

@@ -2,11 +2,11 @@
 
 let db = require('../db');
 let config = require('../config');
-let request = require('request');
-request.defaults({jar: true})
+let request = require('request').defaults({jar: true});
 
 let getHandler = (req, res) => {
-    if (!req.logined) {
+    
+    if (request.cookie.access_token === 'undefined') {
         res.send('<html><body>You shall not create new discussion unless you are logined.</body></html>');
         return;
     }
@@ -114,6 +114,7 @@ let postHandler = (req, res) => {
             },
             jar: cookieJar
         }, (err, response, body) => {
+            console.log(`${req.body.title}\n${req.body.content}`);
             if (!body.data) {
                 data.title = req.body.title;
                 data.content = req.body.content;

@@ -9,7 +9,7 @@ let handler = (req, res) => {
         conn.query({
             sql: [
                 'DELETE FROM access_tokens',
-                'WHERE id=?'
+                `WHERE token=${req.cookies.access_token}`
             ].join(' '),
             values: [token],
         }, () => {
