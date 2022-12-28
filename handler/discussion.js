@@ -46,14 +46,14 @@ let handler = (req, res) => {
                 userName: row.username,
                 date: utils.formatDate(row.created_at) + ' ' + utils.formatTime(row.created_at),
                 content: row.content
-                    .replace(/<[s|e]>([^]+?)<\/[s|e]>/g, () => '')
-                    .replace(/<IMG ([^]+?)>([^]+?)<\/IMG>/g, (match, p1) => `<a href="/imgProxy?url=${ encodeURIComponent(p1.match(/src="([^]+?)"/)[1]) }" target="_blank" class="img"><font color="#337000"><b><i>点击此处打开图片</i></b></font></a>`)
-                    .replace(/<URL url="([^]+?)">([^]+?)<\/URL>/g, (match, p1, p2) => `<a href="${p1}">${p2}</a>`)
-                    .replace(/<CODE>([^]+?)<\/CODE>/, (match, p1) => `<pre><code>${p1}</code></pre>`)
-                    .replace(/<C>\$\$([^]+?)\$\$<\/C>/g, (match, expr) => `<img src="/KaTeX/${encodeURIComponent(expr)}"></img>`)
-                    .replace(/<HR>([^]+?)<\/HR>/g, () => '<hr />')
-                    .replace(/@(.+?)#\d+/, (match, p1) => `<font size="3" color="#337000">${config.lang.replyTo}${p1}:</font> `)
-                    .replace(/<USERMENTION ([^]+?)>([^]+?)<\/USERMENTION>/, (match, p1, p2) => `<a href="/u/${ p1.match(/username="(.+?)"/)[1] }" class="mention">${ p2 }</a>`)
+                    // .replace(/<[s|e]>([^]+?)<\/[s|e]>/g, () => '')
+                    // .replace(/<IMG ([^]+?)>([^]+?)<\/IMG>/g, (match, p1) => `<a href="/imgProxy?url=${ encodeURIComponent(p1.match(/src="([^]+?)"/)[1]) }" target="_blank" class="img"><font color="#337000"><b><i>点击此处打开图片</i></b></font></a>`)
+                    // .replace(/<URL url="([^]+?)">([^]+?)<\/URL>/g, (match, p1, p2) => `<a href="${p1}">${p2}</a>`)
+                    // .replace(/<CODE>([^]+?)<\/CODE>/, (match, p1) => `<pre><code>${p1}</code></pre>`)
+                    // .replace(/<C>\$\$([^]+?)\$\$<\/C>/g, (match, expr) => `<img src="/KaTeX/${encodeURIComponent(expr)}"></img>`)
+                    // .replace(/<HR>([^]+?)<\/HR>/g, () => '<hr />')
+                    // .replace(/@(.+?)#\d+/, (match, p1) => `<font size="3" color="#337000">${config.lang.replyTo}${p1}:</font> `)
+                    //.replace(/<USERMENTION ([^]+?)>([^]+?)<\/USERMENTION>/, (match, p1, p2) => `<a href="/u/${ p1.match(/username="(.+?)"/)[1] }" class="mention">${ p2 }</a>`)
                     .replace('{"sticky":true}', (match, p1) => '置顶了此贴')
                     .replace('{"sticky":false}', (match, p1) => '取消置顶了此贴'),
                 avatarPath: '/assets/avatars/' + (row.avatar_url || 'default.jpg')

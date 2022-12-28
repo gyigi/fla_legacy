@@ -2,7 +2,8 @@
 
 let db = require('../db');
 let config = require('../config');
-let request = require('request').defaults({jar: true});
+let request = require('request');
+request.defaults({jar: true})
 
 let getHandler = (req, res) => {
     if (!req.logined) {
